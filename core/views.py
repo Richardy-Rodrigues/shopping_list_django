@@ -36,4 +36,21 @@ class ProductAPIView(generics.RetrieveUpdateDestroyAPIView):
 
     def get_queryset(self):
         return models.ProductModel.objects.filter(user=self.request.user)
-    
+
+
+class CategoriesAPIView(generics.ListCreateAPIView):
+    queryset = models.CategoryModel.objects.all()
+    serializer_class = serializers.CategorySerializer
+    permission_classes = [IsAuthenticated, ]
+
+    def get_queryset(self):
+        return models.CategoryModel.objects.filter(user=self.request.user)
+
+
+class CategoryAPIView(generics.RetrieveUpdateDestroyAPIView):
+    queryset = models.CategoryModel.objects.all()
+    serializer_class = serializers.CategorySerializer
+    permission_classes = [IsAuthenticated, ]
+
+    def get_queryset(self):
+        return models.CategoryModel.objects.filter(user=self.request.user)

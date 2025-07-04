@@ -39,3 +39,13 @@ class ProductSerializer(serializers.ModelSerializer):
             'category',
             'user'
         ]
+
+
+class CategorySerializer(serializers.ModelSerializer):
+
+    class Meta:
+        extra_kwargs = {
+            'user': {'read_only': True}
+        }
+        model = models.CategoryModel
+        fields = '__all__'
