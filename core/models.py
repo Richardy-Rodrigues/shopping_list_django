@@ -20,6 +20,7 @@ class CartModel(models.Model):
 
 class CategoryModel(models.Model):
     description = models.CharField(max_length=100, null=False, blank=False)
+    user = models.ForeignKey(User, related_name='users_categories', on_delete=models.CASCADE, null=True)
 
     class Meta:
         verbose_name = 'Category'

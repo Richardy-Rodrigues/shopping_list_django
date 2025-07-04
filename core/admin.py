@@ -7,7 +7,7 @@ class ProductAdmin(admin.ModelAdmin):
 
 @admin.register(models.CategoryModel)
 class CategoryAdmin(admin.ModelAdmin):
-    list_display = ('id', 'description')
+    list_display = ('id', 'user_id', 'description')
 
 @admin.register(models.CartModel)
 class CartAdmin(admin.ModelAdmin):
