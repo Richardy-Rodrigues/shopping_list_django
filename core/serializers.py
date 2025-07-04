@@ -22,3 +22,20 @@ class UserSerializer(serializers.ModelSerializer):
             'groups',
             'user_permissions',
         ]
+
+
+class ProductSerializer(serializers.ModelSerializer):
+
+    class Meta:
+        extra_kwargs = {
+            'user': {'read_only': True}
+        }
+        model = models.ProductModel
+        fields = [
+            'id',
+            'description',
+            'price',
+            'recurrent',
+            'category',
+            'user'
+        ]
