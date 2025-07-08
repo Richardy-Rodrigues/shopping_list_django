@@ -49,3 +49,21 @@ class CategorySerializer(serializers.ModelSerializer):
         }
         model = models.CategoryModel
         fields = '__all__'
+
+
+class CartSerializer(serializers.ModelSerializer):
+    
+    class Meta:
+        extra_kwargs = {
+            'dt_created': {'read_only': True},
+            'dt_finalized': {'read_only': True},
+            'user': {'read_only': True}
+        }
+        model = models.CartModel
+        fields = '__all__'
+
+class CartItemSerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = models.CartItemModel
+        fields = '__all__'
