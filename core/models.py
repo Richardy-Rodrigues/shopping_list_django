@@ -13,9 +13,10 @@ class CartModel(models.Model):
         verbose_name = 'Cart'
         verbose_name_plural = 'Carts'
         ordering = ['id']
+        unique_together = ['user']
 
     def __str__(self):
-        return self.id_user
+        return f'{self.pk}'
     
 
 class CategoryModel(models.Model):
@@ -44,7 +45,7 @@ class ProductModel(models.Model):
         ordering = ['id']
 
     def __str__(self):
-        return f'{self.description} - {self.category} - {self.user}'
+        return f'{self.description}'
 
 
 class CartItemModel(models.Model):
