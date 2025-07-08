@@ -13,7 +13,6 @@ class CartModel(models.Model):
         verbose_name = 'Cart'
         verbose_name_plural = 'Carts'
         ordering = ['id']
-        unique_together = ['user']
 
     def __str__(self):
         return f'{self.pk}'
