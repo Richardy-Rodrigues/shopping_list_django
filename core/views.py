@@ -36,6 +36,7 @@ class ProductAPIView(generics.RetrieveUpdateDestroyAPIView):
 
     def get_queryset(self):
         return models.ProductModel.objects.filter(user=self.request.user)
+<<<<<<< HEAD
 
 
 class CategoriesAPIView(generics.ListCreateAPIView):
@@ -71,3 +72,6 @@ class CartItemAPIView(generics.ListCreateAPIView):
     queryset = models.CartItemModel.objects.all()
     serializer_class = serializers.CartItemSerializer
     permission_classes = [IsAuthenticated, ]
+=======
+    
+>>>>>>> parent of 5a33aab (feat: category serializer, urls and views created)

@@ -39,6 +39,7 @@ class ProductSerializer(serializers.ModelSerializer):
             'category',
             'user'
         ]
+<<<<<<< HEAD
 
 
 class CategorySerializer(serializers.ModelSerializer):
@@ -67,3 +68,5 @@ class CartItemSerializer(serializers.ModelSerializer):
     class Meta:
         model = models.CartItemModel
         fields = '__all__'
+=======
+>>>>>>> parent of 5a33aab (feat: category serializer, urls and views created)

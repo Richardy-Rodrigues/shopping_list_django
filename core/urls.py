@@ -6,8 +6,11 @@ urlpatterns = [
     path('users/<int:pk>/', views.UserAPIView.as_view(), name='detail_user'),
     path('products/', views.ProductsAPIView.as_view(), name='products'),
     path('products/<int:pk>/', views.ProductAPIView.as_view(), name='detail_product'),
+<<<<<<< HEAD
     path('categories/', views.CategoriesAPIView.as_view(), name='categories'),
     path('categories/<int:pk>/', views.CategoryAPIView.as_view(), name='detail_category'),
     path('carts/', views.CartAPIView.as_view(), name='carts'),
     path('carts/items/', views.CartItemAPIView.as_view(), name='cart_item'),
+=======
+>>>>>>> parent of 5a33aab (feat: category serializer, urls and views created)
 ]
