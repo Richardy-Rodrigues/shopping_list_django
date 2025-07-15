@@ -65,5 +65,14 @@ class CartSerializer(serializers.ModelSerializer):
 class CartItemSerializer(serializers.ModelSerializer):
 
     class Meta:
+        extra_kwargs = {
+            'cart': {'read_only': True},
+        }
         model = models.CartItemModel
         fields = '__all__'
+    
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        user = self.context['request'].user
+        self.fields['product'].queryset = models.ProductModel.objects.filter(user=user)
+        self.fields['cart'].queryset = models.CartModel.objects.filter(user=user)
