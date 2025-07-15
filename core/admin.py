@@ -3,7 +3,7 @@ from . import models
 
 @admin.register(models.ProductModel)
 class ProductAdmin(admin.ModelAdmin):
-    list_display = ('user_id', 'category_id', 'price', 'description', 'recurrent')
+    list_display = ('id', 'user_id', 'category_id', 'price', 'description', 'recurrent')
 
 @admin.register(models.CategoryModel)
 class CategoryAdmin(admin.ModelAdmin):
